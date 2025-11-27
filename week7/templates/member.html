@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歡迎光臨</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    <script src="{{ url_for('static', path='main.js') }}" defer></script>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1 class ="hero_title">歡迎光臨，這是會員頁</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="message">
+            <p><span id="welcome-name">{{ name }}</span>，歡迎登入系統</p>
+            <p><a href="/logout">登出系統</a></p>
+        </div>
+        
+        <div class="divider"></div>
+
+        <section class="member-query">
+            <h2>查詢會員姓名</h2>
+            <input id="query-id" type="text" placeholder="會員編號">
+            <button id="query-btn">查詢</button>
+            <div id="query-result"></div>
+        </section>
+        
+        <section class="member-update">
+            <h2>更新我的姓名</h2>
+            <input id="update-name" type="text">
+            <button id="update-btn">更新</button>
+            <div id="update-status"></div>
+        </section>
+
+        <section class="member-track">
+            <h2>誰查詢了我</h2>
+            <button id="track-refresh">更新</button>
+            <div id="track-list"></div>
+        </section>
+        
+    </main>
+
+</body>
+</html>
